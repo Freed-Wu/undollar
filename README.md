@@ -65,12 +65,39 @@ Initialized empty Git repository in /dev/shm/.git/
 - This project:
   - Provide shell completions for bash/zsh
   - Depends on sh
-  - Packaged for:
-    - [deb](https://github.com/Freed-Wu/undollar/releases)
-    - [rpm](https://github.com/Freed-Wu/undollar/releases)
-    - Archlinux: [`yay -S sh-undollar`](https://aur.archlinux.org/packages/sh-undollar)
-    - nix: [`nix-env -iA nur.repos.Freed-Wu.undollar`](https://nur.nix-community.org/repos/freed-wu)
-    - homebrew:
+  - Packaged for many distributions
+
+## Install
+
+### deb
+
+Download [`*.deb`](https://github.com/Freed-Wu/undollar/releases) firstly.
+
+```sh
+deb -i *.deb
+```
+
+### rpm
+
+Download [`*.rpm`](https://github.com/Freed-Wu/undollar/releases) firstly.
+
+```sh
+rpm -i *.rpm
+```
+
+### [AUR](https://aur.archlinux.org/packages/sh-undollar)
+
+```sh
+yay -S sh-undollar
+```
+
+### [NUR](https://nur.nix-community.org/repos/freed-wu)
+
+```sh
+nix-env -iA nur.repos.Freed-Wu.undollar
+```
+
+### homebrew
 
 ```sh
 brew tap Freed-Wu/undollar https://github.com/Freed-Wu/undollar

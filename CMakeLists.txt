@@ -1,8 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
-string(REGEX MATCH "\\d(\.\\d)*" MATCHED ENV{GITHUB_REF_NAME})
-if(MATCHED)
-  set(VERSION $ENV{GITHUB_REF_NAME})
-else()
+string(REGEX MATCH [[[0-9](\.[0-9])*]] VERSION $ENV{GITHUB_REF_NAME})
+if(NOT VERSION)
   set(VERSION 0.0.0.0)
 endif()
 set(HOMEPAGE_URL https://github.com/Freed-Wu/undollar)
@@ -13,21 +11,34 @@ project(
   HOMEPAGE_URL ${HOMEPAGE_URL})
 
 include(GNUInstallDirs)
-install(FILES bin/$
-        PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_WRITE GROUP_EXECUTE WORLD_EXECUTE
-        DESTINATION ${CMAKE_INSTALL_BINDIR})
+install(
+  FILES bin/$
+  PERMISSIONS
+    OWNER_READ
+    OWNER_WRITE
+    OWNER_EXECUTE
+    GROUP_READ
+    GROUP_WRITE
+    GROUP_EXECUTE
+    WORLD_EXECUTE
+  DESTINATION ${CMAKE_INSTALL_BINDIR})
 
 option(ENABLE_BASH_COMPLETION "install bash completion" ON)
 option(ENABLE_ZSH_COMPLETION "install zsh completion" ON)
-set(BASH_COMPLETION_COMPLETIONSDIR "" CACHE STRING "directory for bash completion")
-set(ZSH_COMPLETION_COMPLETIONSDIR "" CACHE STRING "directory for zsh completion")
+set(BASH_COMPLETION_COMPLETIONSDIR
+    ""
+    CACHE STRING "directory for bash completion")
+set(ZSH_COMPLETION_COMPLETIONSDIR
+    ""
+    CACHE STRING "directory for zsh completion")
 
 if(ENABLE_BASH_COMPLETION)
   if(NOT BASH_COMPLETION_COMPLETIONSDIR)
     find_package(bash-completion)
   endif()
   if(NOT BASH_COMPLETION_COMPLETIONSDIR)
-    set(BASH_COMPLETION_COMPLETIONSDIR "${CMAKE_INSTALL_DATAROOTDIR}/bash-completion/completions")
+    set(BASH_COMPLETION_COMPLETIONSDIR
+        "${CMAKE_INSTALL_DATAROOTDIR}/bash-completion/completions")
   endif()
   install(FILES completions/bash/$
           DESTINATION ${BASH_COMPLETION_COMPLETIONSDIR})
@@ -35,10 +46,10 @@ endif()
 
 if(ENABLE_ZSH_COMPLETION)
   if(NOT ZSH_COMPLETION_COMPLETIONSDIR)
-    set(ZSH_COMPLETION_COMPLETIONSDIR "${CMAKE_INSTALL_DATAROOTDIR}/zsh/site-functions")
+    set(ZSH_COMPLETION_COMPLETIONSDIR
+        "${CMAKE_INSTALL_DATAROOTDIR}/zsh/site-functions")
   endif()
-  install(FILES completions/zsh/_$
-          DESTINATION ${ZSH_COMPLETION_COMPLETIONSDIR})
+  install(FILES completions/zsh/_$ DESTINATION ${ZSH_COMPLETION_COMPLETIONSDIR})
 endif()
 
 set(CPACK_PACKAGE_CONTACT ${HOMEPAGE_URL}/issues)

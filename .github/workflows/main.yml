@@ -21,7 +21,7 @@ jobs:
         run: |
           sudo apt-get -y update
           sudo apt-get -y install rpm
-      - name: Test
+      - name: Build
         run: |
           cmake -Bbuild
           cmake --build build
