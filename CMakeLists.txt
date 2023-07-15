@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-string(REGEX MATCH [[[0-9](\.[0-9])*]] VERSION $ENV{GITHUB_REF_NAME})
+string(REGEX MATCH [[[0-9](\.[0-9])*]] VERSION "$ENV{GITHUB_REF_NAME}")
 if(NOT VERSION)
   set(VERSION 0.0.0.0)
 endif()
@@ -7,7 +7,7 @@ set(HOMEPAGE_URL https://github.com/Freed-Wu/undollar)
 project(
   undollar
   VERSION ${VERSION}
-  DESCRIPTION undollar
+  DESCRIPTION "strip the dollar sign from the beginning of the terminal command"
   HOMEPAGE_URL ${HOMEPAGE_URL})
 
 include(GNUInstallDirs)
@@ -18,8 +18,8 @@ install(
     OWNER_WRITE
     OWNER_EXECUTE
     GROUP_READ
-    GROUP_WRITE
     GROUP_EXECUTE
+    WORLD_READ
     WORLD_EXECUTE
   DESTINATION ${CMAKE_INSTALL_BINDIR})
 

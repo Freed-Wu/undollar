@@ -9,15 +9,11 @@
           formatter = nixpkgs-fmt;
           packages.default = stdenv.mkDerivation rec {
             pname = "undollar";
-            version = "0.0.1";
+            version = "";
             src = self;
             nativeBuildInputs = [ cmake ];
-            meta = with lib; {
-              homepage = "https://github.com/Freed-Wu/undollar";
-              description = "strip the dollar sign from the beginning of the terminal command";
-              license = licenses.gpl3;
-              maintainers = with maintainers; [ Freed-Wu ];
-              platforms = platforms.unix;
+            meta = {
+              mainProgram = "$";
             };
           };
         }
