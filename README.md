@@ -2,6 +2,8 @@
 
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/Freed-Wu/undollar/main.svg)](https://results.pre-commit.ci/latest/github/Freed-Wu/undollar/main)
 [![github/workflow](https://github.com/Freed-Wu/undollar/actions/workflows/main.yml/badge.svg)](https://github.com/Freed-Wu/undollar/actions)
+[![github/workflow](https://github.com/Freed-Wu/undollar/actions/workflows/nix.yml/badge.svg)](https://github.com/Freed-Wu/undollar/actions)
+[![codecov](https://codecov.io/gh/Freed-Wu/undollar/branch/main/graph/badge.svg)](https://codecov.io/gh/Freed-Wu/undollar)
 
 [![github/downloads](https://shields.io/github/downloads/Freed-Wu/undollar/total)](https://github.com/Freed-Wu/undollar/releases)
 [![github/downloads/latest](https://shields.io/github/downloads/Freed-Wu/undollar/latest/total)](https://github.com/Freed-Wu/undollar/releases/latest)
@@ -64,7 +66,8 @@ Initialized empty Git repository in /dev/shm/.git/
   for homebrew.
 - This project:
   - Provide shell completions for bash/zsh
-  - Depends on sh
+  - Only depends on sh
+  - Unit test
   - Packaged for many distributions
 
 ## Install
