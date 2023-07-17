@@ -8,7 +8,8 @@ project(
   undollar
   VERSION ${VERSION}
   DESCRIPTION "strip the dollar sign from the beginning of the terminal command"
-  HOMEPAGE_URL ${HOMEPAGE_URL})
+  HOMEPAGE_URL ${HOMEPAGE_URL}
+  LANGUAGES)
 
 include(GNUInstallDirs)
 install(

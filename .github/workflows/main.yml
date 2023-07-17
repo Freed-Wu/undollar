@@ -65,6 +65,7 @@ jobs:
           files: |
             build/*.deb
             build/*.rpm
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
