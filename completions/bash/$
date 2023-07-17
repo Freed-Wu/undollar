@@ -20,4 +20,4 @@ _undollar() {
 		return
 	fi
 } &&
-	complete -F_undollar $
+	complete -F_undollar $ %

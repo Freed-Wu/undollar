@@ -30,6 +30,8 @@
 [![github/v](https://shields.io/github/v/release/Freed-Wu/undollar)](https://github.com/Freed-Wu/undollar)
 
 Strip the dollar sign from the beginning of the terminal command.
+An 'unpercentage' is provided for zsh user.
+
 For example, stackoverflow said:
 
 ````markdown
@@ -65,6 +67,7 @@ Initialized empty Git repository in /dev/shm/.git/
 - <https://github.com/happyRip/undollar>: an undollar written in bash. Packaged
   for homebrew.
 - This project:
+  - Provide `$` for bash and `%` for zsh
   - Provide shell completions for bash/zsh
   - Only depends on sh
   - Unit test

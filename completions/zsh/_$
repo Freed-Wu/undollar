@@ -1,4 +1,4 @@
-#compdef $
+#compdef $ %
 
 _arguments -s -S \
   "1: :{_command_names -e}" \
