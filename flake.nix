@@ -8,8 +8,7 @@
         {
           formatter = nixpkgs-fmt;
           packages.default = stdenv.mkDerivation rec {
-            pname = "undollar";
-            version = "";
+            name = "undollar";
             src = self;
             nativeBuildInputs = [ cmake ];
             meta = {
